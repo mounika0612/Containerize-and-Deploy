@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blogcss-deployment
+  labels:
+    app: blogcss
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blogcss
+  template:
+    metadata:
+      labels:
+        app: blogcss
+    spec:
+      containers:
+      - name: blogcss
+        image: mounikamouni0612/blog-css
+        ports:
+        - containerPort: 80
+
